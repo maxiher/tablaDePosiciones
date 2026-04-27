@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Torneo Apertura 2025 — AUF</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div id="app">
 
@@ -83,6 +85,9 @@
         <div class="panel-actions">
           <button class="btn btn-primary" id="btnUpdate">ACTUALIZAR TABLA</button>
           <button class="btn btn-danger" id="btnReset">REINICIAR</button>
+          <button class="btn btn-ghost" id="btnExport">↓ Exportar</button>
+          <input type="file" id="fileImport" accept=".json" style="display:none" />
+          <button class="btn btn-ghost" id="btnImport">↑ Importar</button>
         </div>
       </div>
     </section>
@@ -93,4 +98,5 @@
 
   <script src="tabla.js"></script>
 </body>
+
 </html>

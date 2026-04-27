@@ -11,22 +11,22 @@
    Datos aproximados del Apertura 2025 AUF (inicio de torneo).
 ──────────────────────────────────────────────────────────── */
 const INITIAL_DATA = [
-  { id: 'rac', name: 'Racing', pj: 12, pg: 8, pe: 3, pp: 1, gf: 21, gc: 11 },
-  { id: 'dep', name: 'Deportivo Maldonado', pj: 12, pg: 7, pe: 2, pp: 3, gf: 20, gc: 13 },
-  { id: 'pen', name: 'Peñarol', pj: 12, pg: 7, pe: 2, pp: 3, gf: 19, gc: 12 },
-  { id: 'alb', name: 'Albion', pj: 12, pg: 5, pe: 4, pp: 4, gf: 20, gc: 13 },
-  { id: 'nac', name: 'Nacional', pj: 12, pg: 6, pe: 1, pp: 5, gf: 19, gc: 16 },
-  { id: 'esp', name: 'Central Español', pj: 12, pg: 5, pe: 3, pp: 4, gf: 17, gc: 19 },
-  { id: 'def', name: 'Defensor Sporting', pj: 12, pg: 4, pe: 5, pp: 3, gf: 10, gc: 8 },
-  { id: 'mct', name: 'Montevideo City', pj: 12, pg: 4, pe: 4, pp: 4, gf: 15, gc: 13 },
-  { id: 'liv', name: 'Liverpool', pj: 12, pg: 4, pe: 4, pp: 4, gf: 16, gc: 16 },
-  { id: 'dan', name: 'Danubio', pj: 12, pg: 3, pe: 6, pp: 3, gf: 15, gc: 16 },
-  { id: 'crl', name: 'Cerro Largo', pj: 12, pg: 4, pe: 2, pp: 6, gf: 13, gc: 15 },
-  { id: 'bos', name: 'Boston River', pj: 12, pg: 4, pe: 2, pp: 6, gf: 10, gc: 13 },
-  { id: 'wan', name: 'Wanderers', pj: 12, pg: 4, pe: 2, pp: 6, gf: 13, gc: 19 },
-  { id: 'pro', name: 'Progreso', pj: 12, pg: 2, pe: 4, pp: 6, gf: 11, gc: 19 },
-  { id: 'cer', name: 'Cerro', pj: 12, pg: 2, pe: 4, pp: 6, gf: 7, gc: 16 },
-  { id: 'juv', name: 'Jueventud', pj: 12, pg: 2, pe: 2, pp: 8, gf: 12, gc: 19 },
+  { id: 'rac', name: 'Racing', pj: 0, pg: 0, pe: 0, pp: 0, gf: 0, gc: 0 },
+  { id: 'dep', name: 'Deportivo Maldonado', pj: 0, pg: 0, pe: 0, pp: 0, gf: 0, gc: 0 },
+  { id: 'pen', name: 'Peñarol', pj: 0, pg: 0, pe: 0, pp: 0, gf: 0, gc: 0 },
+  { id: 'alb', name: 'Albion', pj: 0, pg: 0, pe: 0, pp: 0, gf: 0, gc: 0 },
+  { id: 'nac', name: 'Nacional', pj: 0, pg: 0, pe: 0, pp: 0, gf: 0, gc: 0 },
+  { id: 'esp', name: 'Central Español', pj: 0, pg: 0, pe: 0, pp: 0, gf: 0, gc: 0 },
+  { id: 'def', name: 'Defensor Sporting', pj: 0, pg: 0, pe: 0, pp: 0, gf: 0, gc: 0 },
+  { id: 'mct', name: 'Montevideo City', pj: 0, pg: 0, pe: 0, pp: 0, gf: 0, gc: 0 },
+  { id: 'liv', name: 'Liverpool', pj: 0, pg: 0, pe: 0, pp: 0, gf: 0, gc: 0 },
+  { id: 'dan', name: 'Danubio', pj: 0, pg: 0, pe: 0, pp: 0, gf: 0, gc: 0 },
+  { id: 'crl', name: 'Cerro Largo', pj: 0, pg: 0, pe: 0, pp: 0, gf: 0, gc: 0 },
+  { id: 'bos', name: 'Boston River', pj: 0, pg: 0, pe: 0, pp: 0, gf: 0, gc: 0 },
+  { id: 'wan', name: 'Wanderers', pj: 0, pg: 0, pe: 0, pp: 0, gf: 0, gc: 0 },
+  { id: 'pro', name: 'Progreso', pj: 0, pg: 0, pe: 0, pp: 0, gf: 0, gc: 0 },
+  { id: 'cer', name: 'Cerro', pj: 0, pg: 0, pe: 0, pp: 0, gf: 0, gc: 0 },
+  { id: 'juv', name: 'Jueventud', pj: 0, pg: 0, pe: 0, pp: 0, gf: 0, gc: 0 },
 ];
 
 /*
@@ -48,7 +48,7 @@ const INITIAL_DATA = [
   { id: 'cer', name: 'Cerro', pj: 12, pg: 2, pe: 4, pp: 6, gf: 7, gc: 16 },
   { id: 'juv', name: 'Jueventud', pj: 12, pg: 2, pe: 2, pp: 8, gf: 12, gc: 19 },
 ];
-*/ 
+*/
 /* ─── STATE ──────────────────────────────────────────────── */
 let teams = [];          // working copy
 let matchQueue = [];     // partidos en cola
@@ -239,17 +239,17 @@ function applyQueue() {
   }
 
   const btnUpdate = document.getElementById('btnUpdate');
-  const btnAdd    = document.getElementById('btnAddMatch');
-  const btnReset  = document.getElementById('btnReset');
+  const btnAdd = document.getElementById('btnAddMatch');
+  const btnReset = document.getElementById('btnReset');
   btnUpdate.disabled = true;
-  btnAdd.disabled    = true;
-  btnReset.disabled  = true;
+  btnAdd.disabled = true;
+  btnReset.disabled = true;
 
   const queue = [...matchQueue];
   matchQueue = [];
   updateQueueUI();
 
-  const STEP_DELAY = 1200;
+  const STEP_DELAY = 2500;
 
   queue.forEach((m, i) => {
     setTimeout(() => {
@@ -265,8 +265,8 @@ function applyQueue() {
           triggerFinalGlow();
           showToast('✓ Todos los resultados actualizados');
           btnUpdate.disabled = false;
-          btnAdd.disabled    = false;
-          btnReset.disabled  = false;
+          btnAdd.disabled = false;
+          btnReset.disabled = false;
         }, 700);
       }
     }, i * STEP_DELAY);
@@ -374,6 +374,39 @@ function setupPanelToggle() {
   });
 }
 
+function exportState() {
+  const data = {
+    exportDate: new Date().toISOString(),
+    teams: teams
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `apertura2025_${new Date().toISOString().slice(0, 10)}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('✓ Estado exportado');
+}
+
+function importState(file) {
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const data = JSON.parse(e.target.result);
+      if (!data.teams) throw new Error();
+      teams = data.teams;
+      previousOrder = sortTeams(teams).map(t => t.id);
+      renderTable(false);
+      populateSelects();
+      showToast('✓ Estado importado correctamente');
+    } catch {
+      showToast('Error al leer el archivo.', 'error');
+    }
+  };
+  reader.readAsText(file);
+}
+
 /* ─── EVENT LISTENERS ────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   init();
@@ -391,6 +424,13 @@ document.addEventListener('DOMContentLoaded', () => {
       init();
       showToast('Tabla reiniciada.');
     }
+  });
+
+  document.getElementById('btnExport').addEventListener('click', exportState);
+  document.getElementById('btnImport').addEventListener('click', () => document.getElementById('fileImport').click());
+  document.getElementById('fileImport').addEventListener('change', e => {
+    if (e.target.files[0]) importState(e.target.files[0]);
+    e.target.value = '';
   });
 
   document.getElementById('btnFullscreen').addEventListener('click', toggleFullscreen);
