@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Torneo Apertura 2025 — AUF</title>
+  <link rel="stylesheet" href="tabla.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-brand">
+        <div class="shield-icon">⚽</div>
+        <div class="header-text">
+          <span class="tournament-label">TORNEO APERTURA 2025</span>
+          <span class="league-label">PRIMERA DIVISIÓN — AUF</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="btnFullscreen" class="btn btn-ghost" title="Pantalla completa">⛶</button>
+      </div>
+    </header>
+
+    <!-- TABLA -->
+    <main class="table-container">
+      <div class="table-wrapper">
+        <table class="standings-table" id="standingsTable">
+          <thead>
+            <tr>
+              <th class="col-pos">#</th>
+              <th class="col-team">EQUIPO</th>
+              <th class="col-stat">PJ</th>
+              <th class="col-stat">PG</th>
+              <th class="col-stat">PE</th>
+              <th class="col-stat">PP</th>
+              <th class="col-stat">GF</th>
+              <th class="col-stat">GC</th>
+              <th class="col-stat">DIF</th>
+              <th class="col-pts">PTS</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Rows injected by JS -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <!-- PANEL DE CARGA -->
+    <section class="input-panel" id="inputPanel">
+      <div class="panel-header">
+        <span class="panel-title">CARGAR RESULTADO</span>
+        <button class="btn btn-ghost small" id="btnTogglePanel" title="Minimizar">▼</button>
+      </div>
+
+      <div class="panel-body" id="panelBody">
+        <div class="match-input-row">
+          <div class="team-input-group">
+            <label>Local</label>
+            <select id="teamHome" class="team-select"></select>
+            <input type="number" id="goalsHome" class="goals-input" min="0" value="0" />
+          </div>
+          <div class="vs-separator">VS</div>
+          <div class="team-input-group">
+            <label>Visitante</label>
+            <select id="teamAway" class="team-select"></select>
+            <input type="number" id="goalsAway" class="goals-input" min="0" value="0" />
+          </div>
+        </div>
+
+        <div class="add-match-row">
+          <button class="btn btn-secondary" id="btnAddMatch">+ Agregar partido</button>
+        </div>
+
+        <!-- Cola de partidos -->
+        <div id="matchQueue" class="match-queue hidden">
+          <div class="queue-label">PARTIDOS EN COLA</div>
+          <ul id="queueList"></ul>
+        </div>
+
+        <div class="panel-actions">
+          <button class="btn btn-primary" id="btnUpdate">ACTUALIZAR TABLA</button>
+          <button class="btn btn-danger" id="btnReset">REINICIAR</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="tabla (1).js"></script>
+</body>
+</html>
